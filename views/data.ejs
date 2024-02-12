@@ -1,1 +1,39 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Rating</th>
+            <th>Badge_Number</th>
+            <th>Contact Number</th>
+            <th>Number of Trips</th>
+            <th>Location</th>
+        </tr>
+        <% for(user of data) { %> 
+        <tr>
+            <td><img src="<%= user.image %>" alt="heya" height="180px" width="180px"></td>
+            <td><p align="center"><%= user.name %></p></td>
+            <td><p align="center"><%= user.rating %></p></td>
+            <td><p align="center"><%= user.badge_Number %></p></td>
+            <td><p align="center"><%= user.phone %></p></td>
+            <td><p align="center"><%= user.noOfTrips %></p></td>
+            <td><p align="center"><%= user.location %></p></td>
+    </tr>       
+    <%} %>
+    </table>
+</body>
+</html>
