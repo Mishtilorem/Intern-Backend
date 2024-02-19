@@ -87,7 +87,11 @@ app.use((err,req,res,next) => {
 
 //starting the server and listening to port
 //middlewares
-app.listen(PORT, () => {
+const server = () => {
+  db()
+  app.listen(PORT, () => {
     // console.log('Server is running on PORT:' , PORT);
     console.log(`Server is running on http://localhost:${PORT}`);
-  });
+  })
+}
+server ()
