@@ -3,12 +3,17 @@ const express = require('express');
 const {faker} = require('@faker-js/faker');
 const path = require('path');
 const axios = require('axios');
+const mongoose = require('mongoose');
+
+const {db} = require('../Backend/db/db.js');
 const app = express()
+require('dotenv').congfig();
+
 //setting up views engine and views directory
 app.set('view engine', 'ejs');
 app.set("views", path.join(__dirname, '/views'));
 // setting server
-const PORT = 8080;
+const PORT = process.env.PORT;
 //declaring cache to prevent cache storing
 const imageCache = {}; // simple in-memory cache
 const uniqueImageParam = () => Math.floor(Math.random() *1000);
